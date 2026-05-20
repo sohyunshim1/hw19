@@ -38,4 +38,22 @@ public class Directory extends Entry {
         entry.setParent(this);
         return this;
     }
+
+    // ⭐ 추가: search 메소드 구현 (Composite 노드)
+    @Override
+    public List<Entry> search(String keyword) {
+        List<Entry> result = new ArrayList<>();
+        
+        // 1. 자기 자신의 이름 검사
+        if (this.name.contains(keyword)) {
+            result.add(this);
+        }
+        
+        // 2. 자식 요소들 재귀 탐색 및 결과 병합
+        for (Entry entry : directory) {
+            result.addAll(entry.search(keyword)); 
+        }
+        
+        return result;
+    }
 }

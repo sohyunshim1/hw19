@@ -1,5 +1,7 @@
 package ch11.A2;
 
+import java.util.List;
+
 public abstract class Entry {
     private Entry parent;
 
@@ -39,4 +41,7 @@ public abstract class Entry {
         } while (entry != null);
         return fullname.toString();
     }
+
+    // ⭐ 추가: 검색을 위한 추상 메소드
+    public abstract List<Entry> search(String keyword);
 }

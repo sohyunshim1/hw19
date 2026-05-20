@@ -2,7 +2,7 @@ package ch16.Sample;
 
 import java.awt.Color;
 import java.awt.Label;
-import java.awt.Font; // 폰트 기능 가져오기
+//import java.awt.Font; // 폰트 기능 가져오기
 
 public class ColleagueLabel extends Label implements Colleague {
     private Mediator mediator;
