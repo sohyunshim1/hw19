@@ -9,20 +9,24 @@ import java.awt.TextArea;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Font;
 
 public class SafeFrame extends Frame implements ActionListener, Context {
     private TextField textClock = new TextField(60);		// 현재 시간 표시
     private TextArea textScreen = new TextArea(10, 60);	// 경비 센터 출력
-    private Button buttonUse = new Button("금고 사용");	// 금고 사용 버튼
-    private Button buttonAlarm = new Button("비상벨");	// 비상벨 버튼
-    private Button buttonPhone = new Button("일반 통화");	// 일반 통화 버튼
-    private Button buttonExit = new Button("종료");		// 종료 버튼
+    private Button buttonUse = new Button("use 금고 사용");	// 금고 사용 버튼
+    private Button buttonAlarm = new Button("emergenct bell 비상벨");	// 비상벨 버튼
+    private Button buttonPhone = new Button("call 일반 통화");	// 일반 통화 버튼
+    private Button buttonExit = new Button("exit 종료");		// 종료 버튼
 
     private State state = DayState.getInstance();		// 현재 상태 
 
     // 생성자 
     public SafeFrame(String title) {
         super(title);
+        
+        this.setFont(new Font("Malgun Gothic", Font.BOLD, 14));
+
         setBackground(Color.lightGray);
         setLayout(new BorderLayout());
         // textClock 배치 

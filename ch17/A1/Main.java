@@ -8,7 +8,7 @@ public class Main {
         // 2. 관찰자들 생성
         Observer observer1 = new DigitObserver();
         Observer observer2 = new GraphObserver();
-        Observer observer3 = new RangeObserver(); // 우리가 새로 만든 관찰자
+        Observer observer3 = new RangeObserver(); // 새로 만든 관찰자
         
         // 3. 관찰 대상을 구독 (등록)
         generator.addObserver(observer1);
