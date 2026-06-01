@@ -13,10 +13,17 @@ public class BigString {
         }
     }
 
-    // 표시
+    // 기존: 표시
     public void print() {
         for (BigChar bc: bigchars) {
             bc.print();
+        }
+    }
+
+    // [Step 2 추가] 각 문자에 대응하는 색상 배열을 받아 출력하는 오버로드 메서드
+    public void print(String[] colors) {
+        for (int i = 0; i < bigchars.length; i++) {
+            bigchars[i].print(colors[i]);
         }
     }
 }
